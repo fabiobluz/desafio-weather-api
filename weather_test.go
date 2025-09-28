@@ -66,8 +66,10 @@ func TestWeatherHandler_EmptyCEP(t *testing.T) {
 	}
 }
 
+// Testes para GetCityFromCEP
 func TestGetCityFromCEP_ValidCEP(t *testing.T) {
-
+	// Este teste requer conexão com internet e API ViaCEP
+	// Em um ambiente de produção, seria melhor usar mocks
 	cep := "01310100" // CEP conhecido de São Paulo
 	city, err := GetCityFromCEP(cep)
 
