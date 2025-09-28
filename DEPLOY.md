@@ -148,14 +148,11 @@ curl "$SERVICE_URL/weather?cep=01310100"
 
 ## 🛠️ Scripts de Automação
 
-### Script de Deploy Completo
+### Deploy Manual Completo
+
+Execute os comandos abaixo sequencialmente:
 
 ```bash
-#!/bin/bash
-# deploy.sh
-
-set -e
-
 # Configurações
 PROJECT_ID="seu-projeto-id"
 SERVICE_NAME="weather-api"
@@ -188,41 +185,18 @@ echo "🌐 URL da API: $SERVICE_URL"
 echo "🧪 Teste: curl \"$SERVICE_URL/weather?cep=01310100\""
 ```
 
-### Script PowerShell (Windows)
+### Deploy no Windows
 
-```powershell
-# deploy.ps1
+Para usuários do Windows, consulte o guia específico:
 
-$PROJECT_ID = "seu-projeto-id"
-$SERVICE_NAME = "weather-api"
-$REGION = "us-central1"
-$WEATHER_API_KEY = "sua-chave-weatherapi"
+📖 **[Guia de Deploy para Windows](./DEPLOY_WINDOWS.md)**
 
-Write-Host "🚀 Iniciando deploy da Weather API..." -ForegroundColor Green
-
-# Configurar projeto
-gcloud config set project $PROJECT_ID
-
-# Habilitar APIs
-gcloud services enable run.googleapis.com
-gcloud services enable cloudbuild.googleapis.com
-
-# Deploy
-gcloud run deploy $SERVICE_NAME `
-  --source . `
-  --platform managed `
-  --region $REGION `
-  --allow-unauthenticated `
-  --set-env-vars WEATHER_API_KEY=$WEATHER_API_KEY `
-  --port 8080
-
-# Obter URL
-$SERVICE_URL = gcloud run services describe $SERVICE_NAME --region $REGION --format 'value(status.url)'
-
-Write-Host "✅ Deploy concluído!" -ForegroundColor Green
-Write-Host "🌐 URL da API: $SERVICE_URL" -ForegroundColor Cyan
-Write-Host "🧪 Teste: curl `"$SERVICE_URL/weather?cep=01310100`"" -ForegroundColor Yellow
-```
+O guia inclui:
+- Instalação do Google Cloud CLI
+- Comandos manuais para deploy
+- Google Cloud Console (interface gráfica)
+- WSL (Windows Subsystem for Linux)
+- GitHub Actions (CI/CD)
 
 ## 🔍 Troubleshooting
 

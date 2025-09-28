@@ -2,6 +2,19 @@
 
 Sistema em Go que recebe um CEP, identifica a cidade e retorna o clima atual em Celsius, Fahrenheit e Kelvin.
 
+## 🚀 API em Execução
+
+A Weather API está rodando no Google Cloud Run e pode ser testada diretamente:
+
+**🌐 URL da API:** https://weather-api-231779291153.us-central1.run.app
+
+**🧪 Teste rápido:**
+```bash
+curl "https://weather-api-231779291153.us-central1.run.app/weather?cep=01310100"
+```
+
+**📊 Status:** ✅ Online e funcionando
+
 ## Funcionalidades
 
 - Recebe um CEP válido de 8 dígitos
@@ -44,8 +57,15 @@ Sistema em Go que recebe um CEP, identifica a cidade e retorna o clima atual em 
 
 Retorna a temperatura atual para o CEP informado.
 
+**URL da API:** https://weather-api-231779291153.us-central1.run.app/weather
+
 **Parâmetros:**
 - `cep`: CEP de 8 dígitos (ex: 01234567)
+
+**Exemplo de uso:**
+```bash
+curl "https://weather-api-231779291153.us-central1.run.app/weather?cep=01310100"
+```
 
 **Respostas:**
 
@@ -107,6 +127,34 @@ Este projeto inclui mocks para serviços externos, permitindo executar testes un
 - 🏠 **Offline:** Funcionam sem internet
 - 🎯 **Previsibilidade:** Respostas sempre iguais
 
+## 🌐 API em Produção
+
+A Weather API está atualmente rodando no Google Cloud Run e pode ser acessada publicamente:
+
+### 📍 Informações do Serviço
+- **URL:** https://weather-api-231779291153.us-central1.run.app
+- **Região:** us-central1
+- **Plataforma:** Google Cloud Run
+- **Status:** ✅ Online e funcionando
+- **Última atualização:** 28/09/2025
+
+### 🧪 Testes Rápidos
+```bash
+# CEP de São Paulo
+curl "https://weather-api-231779291153.us-central1.run.app/weather?cep=01310100"
+
+# CEP do Rio de Janeiro
+curl "https://weather-api-231779291153.us-central1.run.app/weather?cep=20040020"
+
+# CEP de Brasília
+curl "https://weather-api-231779291153.us-central1.run.app/weather?cep=70040900"
+```
+
+### 📊 Monitoramento
+- **Logs:** Disponível no Google Cloud Console
+- **Métricas:** Monitoramento automático do Cloud Run
+- **Disponibilidade:** 99.9% SLA do Google Cloud Run
+
 ## Deploy no Google Cloud Run
 
 ### 🚀 Deploy Rápido
@@ -128,8 +176,20 @@ Para instruções detalhadas, configurações avançadas, scripts automatizados 
 
 📖 **[Guia Completo de Deploy](./DEPLOY.md)**
 
+### 🖥️ Deploy no Windows
+
+Para usuários do Windows, temos guias específicos:
+
+📖 **[Guia de Deploy para Windows](./DEPLOY_WINDOWS.md)**
+
+**Opções disponíveis:**
+- Comandos manuais (recomendado)
+- Google Cloud Console (interface gráfica)
+- WSL (Windows Subsystem for Linux)
+- GitHub Actions (CI/CD)
+
 **Inclui:**
-- Scripts automatizados (Linux/Mac/Windows)
+- Instalação do Google Cloud CLI
 - Configurações avançadas
 - Monitoramento e troubleshooting
 - Otimizações de performance
