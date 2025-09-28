@@ -122,7 +122,7 @@ scoop install gcloud
 gcloud auth login
 
 # 2. Configurar projeto
-gcloud config set project desafio-clima-api
+gcloud config set project ${{PROJECT_ID}}
 
 # 3. Habilitar APIs necessárias
 gcloud services enable run.googleapis.com
@@ -137,7 +137,7 @@ gcloud run deploy weather-api \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
-  --set-env-vars WEATHER_API_KEY=5250b2cf30204761825230305252409 \
+  --set-env-vars WEATHER_API_KEY=SUA_CHAVE_WEATHERAPI \
   --port 8080
 
 # 6. Deploy com configurações avançadas (opcional)
@@ -146,7 +146,7 @@ gcloud run deploy weather-api \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated \
-  --set-env-vars WEATHER_API_KEY=5250b2cf30204761825230305252409 \
+  --set-env-vars WEATHER_API_KEY=SUA_CHAVE_WEATHERAPI \
   --port 8080 \
   --memory 512Mi \
   --cpu 1 \

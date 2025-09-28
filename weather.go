@@ -26,11 +26,11 @@ func GetCityFromCEP(cep string) (string, error) {
 	}
 	type viaCEP struct {
 		Localidade string `json:"localidade"`
-		Erro       bool   `json:"erro"`
+		Erro       string `json:"erro"`
 	}
 	var v viaCEP
 	json.NewDecoder(resp.Body).Decode(&v)
-	if v.Erro || v.Localidade == "" {
+	if v.Erro != "" || v.Localidade == "" {
 		return "", fmt.Errorf("not found")
 	}
 	return strings.TrimSpace(v.Localidade), nil

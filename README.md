@@ -109,7 +109,7 @@ go test -cover
 
 ### 📊 Cobertura de Testes
 
-- **Cobertura Total:** 78.4%
+- **Cobertura Total:** 70.6%
 - **Status:** ✅ Excelente
 - **Total de Testes:** 17 testes
 - **Mocks:** Implementados para testes offline
